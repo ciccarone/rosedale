@@ -92,12 +92,47 @@ h1, h2, h3, h4, h5, h6 {
 
 .brand-nav {
   padding-top: 64px !important;
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn {
+  color: white;
+  padding: 1em 2em 0.8em;
+  border-radius: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  transition: 0.25s ease-out;
+}
+.btn--blue {
+  background-color: #2e59a7;
+}
+.btn--blue:hover {
+  background-color: #23447f;
+}
+.btn--green {
+  background-color: #a4c03c;
+}
+.btn--green:hover {
+  background-color: #839930;
 }
 
 .hero--front {
   position: absolute;
   top: 0;
   width: 100%;
+}
+.hero--front__buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+.hero--front__buttons > a {
+  margin: 1em;
 }
 .hero--front__inner h3 {
   font-size: 3em;
