@@ -16,6 +16,8 @@
 
 $color--blue: #2e59a7;
 $color--blue-dark: #1e3a6d;
+$color--grey: #eeeeee;
+$color--green: #a4c03c;
 
 $var--border-radius: 8px;
 $var--transition: .25s ease-out;
@@ -72,7 +74,6 @@ h1, h2, h3, h4, h5, h6 {
   .et_pb_row_1_tb_header {
     z-index: 3;
   }
-
 }
 
 .mega-menu > li {
@@ -88,6 +89,33 @@ h1, h2, h3, h4, h5, h6 {
   float: right !important;
 }
 
+.mega-menu > li > .mega-sub-menu {
+  > li {
+    &:nth-child(1) {
+      background-color: white !important;
+    }
+    &:nth-child(2) {
+      background-color: $color--grey !important;
+    }
+
+
+  }
+}
+
+.mega-2-columns > a {
+  color: $color--blue !important;
+  font-weight: bold;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  &:after {
+    content: '\f35a' !important;
+    font-family: "Font Awesome 5 Pro";
+    color: $color--green;
+    margin-left: 6px;
+    display: block !important;
+  }
+}
+
 .brand-nav {
   padding-top: 64px !important;
 }
@@ -98,5 +126,25 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     width: 100%;
+
+    &__inner {
+
+      h3 {
+        font-size: 3em;
+        font-family: 'Overpass', sans-serif;
+      }
+      h2 {
+        display: flex;
+        font-size: 5em;
+        justify-content: center;
+
+        div {
+          color: $color--green;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin: 0 .25em;
+        }
+      }
+    }
   }
 }

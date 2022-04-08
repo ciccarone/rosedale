@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*---------------------------------------------------------------------------------
 
  Theme Name:   Rosedale
@@ -68,6 +69,27 @@ h1, h2, h3, h4, h5, h6 {
   float: right !important;
 }
 
+.mega-menu > li > .mega-sub-menu > li:nth-child(1) {
+  background-color: white !important;
+}
+.mega-menu > li > .mega-sub-menu > li:nth-child(2) {
+  background-color: #eeeeee !important;
+}
+
+.mega-2-columns > a {
+  color: #2e59a7 !important;
+  font-weight: bold;
+  margin-bottom: 8px !important;
+  display: flex !important;
+}
+.mega-2-columns > a:after {
+  content: "" !important;
+  font-family: "Font Awesome 5 Pro";
+  color: #a4c03c;
+  margin-left: 6px;
+  display: block !important;
+}
+
 .brand-nav {
   padding-top: 64px !important;
 }
@@ -76,6 +98,21 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   width: 100%;
+}
+.hero--front__inner h3 {
+  font-size: 3em;
+  font-family: "Overpass", sans-serif;
+}
+.hero--front__inner h2 {
+  display: flex;
+  font-size: 5em;
+  justify-content: center;
+}
+.hero--front__inner h2 div {
+  color: #a4c03c;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0.25em;
 }
 
 /*# sourceMappingURL=style.css.map */
