@@ -32,9 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 .util-nav {
   position: fixed;
   width: 100%;
-  
+
+  z-index: 10;
+
   .et_pb_menu__wrap {
     justify-content: flex-end;
+  }
+
+  .et_pb_menu {
+    background-color: transparent !important;
   }
 
   li {
@@ -59,5 +65,38 @@ h1, h2, h3, h4, h5, h6 {
     &:hover {
       background-color: $color--blue-dark;
     }
+  }
+}
+
+.main-nav {
+  .et_pb_row_1_tb_header {
+    z-index: 3;
+  }
+
+}
+
+.mega-menu > li {
+  > a {
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+}
+
+.mega-menu {
+  width: fit-content !important;
+  display: flex !important;
+  float: right !important;
+}
+
+.brand-nav {
+  padding-top: 64px !important;
+}
+
+.hero {
+
+  &--front {
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }

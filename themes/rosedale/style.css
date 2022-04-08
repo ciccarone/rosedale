@@ -23,9 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 .util-nav {
   position: fixed;
   width: 100%;
+  z-index: 10;
 }
 .util-nav .et_pb_menu__wrap {
   justify-content: flex-end;
+}
+.util-nav .et_pb_menu {
+  background-color: transparent !important;
 }
 .util-nav li {
   margin-top: 0 !important;
@@ -47,6 +51,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 .util-nav a:hover {
   background-color: #1e3a6d;
+}
+
+.main-nav .et_pb_row_1_tb_header {
+  z-index: 3;
+}
+
+.mega-menu > li > a {
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+.mega-menu {
+  width: fit-content !important;
+  display: flex !important;
+  float: right !important;
+}
+
+.brand-nav {
+  padding-top: 64px !important;
+}
+
+.hero--front {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
