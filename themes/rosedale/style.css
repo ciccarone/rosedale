@@ -11,5 +11,42 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 ------------------------------ ADDITIONAL CSS HERE ------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Overpass:wght@300;400;700&display=swap");
+body {
+  font-family: "Overpass", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Exo", sans-serif;
+}
+
+.util-nav {
+  position: fixed;
+  width: 100%;
+}
+.util-nav .et_pb_menu__wrap {
+  justify-content: flex-end;
+}
+.util-nav li {
+  margin-top: 0 !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+.util-nav a {
+  transition: 0.25s ease-out;
+  background-color: #2e59a7;
+  font-weight: bold;
+  color: white;
+  padding: 1em !important;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-transform: uppercase;
+}
+.util-nav a:hover {
+  background-color: #1e3a6d;
+}
 
 /*# sourceMappingURL=style.css.map */
