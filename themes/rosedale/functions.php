@@ -55,3 +55,121 @@ function hero_text( $atts )
 }
 
 add_shortcode('hero_text', 'hero_text');
+
+
+function persona_boxes( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'persona_boxes' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'persona',
+	) );
+
+	$ret .= '<div class="tabby">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<a class="tabby__item" href="'.get_the_permalink().'">';
+				$ret .= '<div class="tabby__inner">';
+					$ret .= '<strong>'.get_the_title().'</strong>';
+					$ret .= '<i class="fa-solid fa-gear"></i>';
+				$ret .= '</div>';
+	    $ret .= '</a>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('persona_boxes', 'persona_boxes');
+
+
+function program_cards( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'program_cards' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'program',
+	) );
+
+	$ret .= '<div class="program-cards">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<a class="program-cards__item" href="'.get_the_permalink().'" style="background-image:url('.get_the_post_thumbnail_url().')">';
+				$ret .= '<div class="program-cards__inner">';
+					$ret .= '<strong>'.get_the_title().'</strong>';
+				$ret .= '</div>';
+	    $ret .= '</a>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('program_cards', 'program_cards');
+
+
+function stat_bubbles_top( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'stat_bubbles_top' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'stat',
+			'post__in' => array( 180, 181 )
+	) );
+
+	$ret .= '<div class="stat-bubble stat-bubble--top">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<div class="stat-bubble__item">';
+				$ret .= '<div class="stat-bubble__inner">';
+					$ret .= '<div>'.get_field('prefix').'</div>';
+					$ret .= '<div>'.get_field('stat').'</div>';
+					$ret .= '<div>'.get_field('suffix').'</div>';
+				$ret .= '</div>';
+	    $ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('stat_bubbles_top', 'stat_bubbles_top');
+
+function stat_bubbles_bottom( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'stat_bubbles_bottom' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'stat',
+			'post__in' => array( 182, 183, 184 )
+	) );
+
+	$ret .= '<div class="stat-bubble stat-bubble--bottom">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<div class="stat-bubble__item">';
+				$ret .= '<div class="stat-bubble__inner">';
+					$ret .= '<div>'.get_field('prefix').'</div>';
+					$ret .= '<div>'.get_field('stat').'</div>';
+					$ret .= '<div>'.get_field('suffix').'</div>';
+				$ret .= '</div>';
+	    $ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('stat_bubbles_bottom', 'stat_bubbles_bottom');
