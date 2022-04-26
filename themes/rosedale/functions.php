@@ -17,7 +17,7 @@ function ds_ct_enqueue_parent() {
   wp_enqueue_style( 'animate-styles', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array());
   wp_enqueue_style( 'slick-theme-styles', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array());
 
-  wp_enqueue_script( 'slick-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array());
+  wp_enqueue_script( 'slick-scripts', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('ds-theme-script'));
 
 
   wp_enqueue_script( 'fontawesome-script', 'https://kit.fontawesome.com/11031dbfde.js', '1', true );
@@ -173,3 +173,62 @@ function stat_bubbles_bottom( $atts )
 }
 
 add_shortcode('stat_bubbles_bottom', 'stat_bubbles_bottom');
+
+function testimonial_carousel( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'testimonial_carousel' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'testimonial',
+	) );
+
+	$ret .= '<div class="testimonial-carousel">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<div class="testimonial-carousel__item">';
+				$ret .= '<div class="testimonial-carousel__inner">';
+					$ret .= get_the_content();
+					$ret .= '<p class="testimonial-carousel--name">'.get_the_title().'</p>';
+				$ret .= '</div>';
+	    $ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('testimonial_carousel', 'testimonial_carousel');
+
+function news_and_events_cards( $atts )
+{
+	$atts = shortcode_atts(
+  array(
+      'null' => '',
+  ), $atts, 'news_and_events_cards' );
+
+	$the_query = new WP_Query( array(
+	    'post_type' => 'post',
+	) );
+
+	$ret .= '<div class="post-cards">';
+	while ( $the_query->have_posts() ) :
+	    $the_query->the_post();
+	    $ret .= '<div class="post-cards__item">';
+	    	$ret .= '<div class="post-cards__image" style="background-image: url('.get_the_post_thumbnail_url().')">';
+				$ret .= '</div>';
+				$ret .= '<div class="post-cards__inner">';
+					$ret .= '<h2>'.get_the_title().'</h2>';
+					$ret .= '<p>'.get_the_excerpt().'</p>';
+					$ret .= '<a href="'.get_the_permalink().'">Read more</a>';
+				$ret .= '</div>';
+	    $ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('news_and_events_cards', 'news_and_events_cards');

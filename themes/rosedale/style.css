@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Exo", sans-serif;
 }
 
+p > strong {
+  color: #2e59a7;
+}
+
 .util-nav {
   position: fixed;
   width: 100%;
@@ -106,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   font-size: 1.1em;
+  width: fit-content;
   transition: 0.25s ease-out;
 }
 .btn--blue {
@@ -175,6 +180,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-persona .et_pb_row_0 {
   top: -128px;
+}
+.cta-persona--under {
+  margin-top: -128px;
 }
 
 #et-main-area {
@@ -336,19 +344,78 @@ h1, h2, h3, h4, h5, h6 {
 }
 .working1 {
   position: absolute;
-  right: 460px;
+  right: 600px;
 }
 .working2 {
   position: absolute;
   right: 0;
   z-index: 3;
-  top: 100px;
+  top: 300px;
 }
 .working__white {
   padding: 4em 7em 4em 4em;
 }
 .working__blue {
+  padding: 5em 5em 1em 5em;
+}
+
+.icon-big-white {
+  font-size: 3em;
+  color: white;
+}
+
+.testimonial-carousel {
+  color: white;
+  font-size: 1.1em;
+}
+.testimonial-carousel .slick-dots li.slick-active button:before {
+  color: white;
+}
+.testimonial-carousel .slick-dots {
+  margin-top: 24px;
+  position: relative;
+}
+.testimonial-carousel .slick-dots li {
+  margin: 0;
+}
+.testimonial-carousel--name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+}
+
+.whats-happening__title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.post-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+.post-cards__inner {
   padding: 3em;
+  position: relative;
+}
+.post-cards__inner a {
+  position: absolute;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.post-cards__item {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+.post-cards h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+.post-cards__image {
+  padding-bottom: 50%;
+  background-size: cover;
+  background-position: center;
 }
 
 /*# sourceMappingURL=style.css.map */

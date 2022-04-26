@@ -33,6 +33,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Exo', sans-serif;
 }
 
+p {
+  > strong {
+    color: $color--blue;
+  }
+}
+
 .util-nav {
   position: fixed;
   width: 100%;
@@ -134,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   font-size: 1.1em;
+  width: fit-content;
   transition: $var--transition;
 
   &--blue {
@@ -214,6 +221,9 @@ h1, h2, h3, h4, h5, h6 {
     top: -128px;
   }
 
+  &--under {
+    margin-top: -128px;
+  }
 }
 
 
@@ -396,18 +406,91 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 900px;
   &1 {
     position: absolute;
-    right: 460px;
+    right: 600px;
   }
   &2 {
     position: absolute;
     right: 0;
     z-index: 3;
-    top: 100px;
+    top: 300px;
   }
   &__white {
     padding: 4em 7em 4em 4em;
   }
   &__blue {
+    padding: 5em 5em 1em 5em;
+  }
+}
+
+
+.icon-big-white {
+  font-size: 3em;
+  color: white;
+}
+
+
+.testimonial-carousel {
+  color: white;
+  font-size: 1.1em;
+
+  .slick-dots li.slick-active button:before {
+    color: white;
+  }
+  .slick-dots {
+    margin-top: 24px;
+    position: relative;
+  }
+
+  .slick-dots li {
+    margin: 0;
+  }
+  &--name {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: .5em;
+  }
+}
+
+
+.whats-happening {
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+
+.post-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+
+  &__inner {
     padding: 3em;
+    position: relative;
+
+    a {
+      position: absolute;
+      font-weight: bold;
+      margin-top: 1em;
+    }
+  }
+
+  &__item {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.04), 0 10px 10px rgba(0,0,0,0.04);
+  }
+
+  h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.4em;
+  }
+
+  &__image {
+    padding-bottom: 50%;
+    background-size: cover;
+    background-position: center;
   }
 }
